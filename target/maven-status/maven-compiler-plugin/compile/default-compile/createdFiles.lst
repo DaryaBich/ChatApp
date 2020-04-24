@@ -1,0 +1,8 @@
+example\backEndApp\components\ContextPersistConfiguration.class
+example\web\controllers\BeansController$1.class
+example\web\controllers\BeansController.class
+example\web\controllers\RootController.class
+example\web\servlets\CustomServlet.class
+example\web\configurations\DispatcherServletInitializer.class
+example\web\configurations\WebApplicationContextConfig.class
+example\backEndApp\configurations\RootApplicationConfiguration.class
