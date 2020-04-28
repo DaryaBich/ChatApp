@@ -64,7 +64,8 @@ public class BeansController {
             }
 
             @Override
-            public void render(Map<String, ?> map, HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse) throws Exception {
+            public void render(Map<String, ?> map, HttpServletRequest httpServletRequest,
+                               HttpServletResponse httpServletResponse) throws Exception {
 
                 String[] webApplicationContextBeans = webApplicationContext.getBeanDefinitionNames();
                 String[] rootContextBeans = webApplicationContext.getParent().getBeanDefinitionNames();
