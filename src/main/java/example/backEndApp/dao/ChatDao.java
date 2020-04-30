@@ -10,5 +10,5 @@ public interface ChatDao {
     boolean updateChatName(Chat chat);
 
     // получение максимального id (для создания нового чата)
-    long getMaxChatId(Chat chat);
+//    long getMaxChatId(Chat chat);
 }

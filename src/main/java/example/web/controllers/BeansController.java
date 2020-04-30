@@ -1,5 +1,6 @@
 package example.web.controllers;
 
+import example.backEndApp.dao.MessageDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.stereotype.Controller;
@@ -33,6 +34,8 @@ public class BeansController {
 
     @Autowired
     private ServletContext servletContext;
+    @Autowired
+    private MessageDao messageDao;
 
     ///beans/beansPresenter?search=Processor
     @RequestMapping("/beansPresenter")
@@ -72,6 +75,7 @@ public class BeansController {
 
                 PrintWriter writer =
                         httpServletResponse.getWriter();
+//                writer.write("MessageDao" + messageDao.addMessage(null));
                 writer.write("<h1>webApplicationContextBeans</h1>\n");
                 for (String webApplicationContextBean : webApplicationContextBeans) {
                     writer.write(webApplicationContextBean+"<br>");
@@ -84,11 +88,11 @@ public class BeansController {
                 Connection connection = dataSource.getConnection();
                 Statement statement = connection.createStatement();
                 writer.write("<h1>DataBaseTest</h1>");
-                ResultSet resultSet = statement.executeQuery("select * from test");
+                ResultSet resultSet = statement.executeQuery("select * from message");
                     while (resultSet.next()){
                         int anInt = resultSet.getInt("ID");
-                        String name = resultSet.getString("NAME");
-                        writer.write("test id "+anInt+" test name "+name+"<br>");
+                        String name = resultSet.getString("SENDINGDATE");
+                        writer.write("user id "+anInt+" test name "+name+"<br>");
                     }
                     statement.close();
             }

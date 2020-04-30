@@ -1,5 +1,7 @@
 package example.backEndApp.components;
 
+import example.backEndApp.dao.MessageDao;
+import example.backEndApp.entities.Message;
 import org.hibernate.SessionFactory;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -11,7 +13,6 @@ import org.springframework.orm.hibernate5.LocalSessionFactoryBean;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 import javax.sql.DataSource;
-import javax.transaction.TransactionManager;
 
 
 @Configuration
@@ -21,8 +22,8 @@ public class ContextPersistConfiguration {
     public DataSource dataSource() {
         EmbeddedDatabaseBuilder embeddedDatabaseBuilder = new EmbeddedDatabaseBuilder();
         EmbeddedDatabase embeddedDatabase = embeddedDatabaseBuilder.setType(EmbeddedDatabaseType.H2)
-                .setName("bdName")
-                .addScript("sql/createTestTable.sql")
+                .setName("chatsDataBase")
+                .addScript("sql/createTables.sql")
                 .build();
         return embeddedDatabase;
     }
@@ -38,5 +39,14 @@ public class ContextPersistConfiguration {
     public HibernateTransactionManager transactionManager(SessionFactory sessionFactory){
         HibernateTransactionManager hibernateTransactionManager = new HibernateTransactionManager(sessionFactory);
         return hibernateTransactionManager;
+    }
+    @Bean
+    public MessageDao messageDao(){
+        return new MessageDao() {
+            @Override
+            public boolean addMessage(Message message) {
+                return false;
+            }
+        };
     }
 }
