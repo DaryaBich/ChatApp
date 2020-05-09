@@ -2,12 +2,13 @@ example\backEndApp\components\ContextPersistConfiguration.class
 example\backEndApp\dao\UserDao.class
 example\backEndApp\entities\UserInChat.class
 example\web\servlets\CustomServlet.class
+example\backEndApp\entities\Authentication.class
 example\backEndApp\entities\Message.class
 example\backEndApp\entities\Chat.class
 example\backEndApp\dao\ChatDao.class
 example\backEndApp\entities\User.class
+example\web\controllers\AuthenticationController.class
 example\web\configurations\DispatcherServletInitializer.class
-example\backEndApp\components\ContextPersistConfiguration$1.class
 example\backEndApp\dao\UserInChatDao.class
 example\web\controllers\BeansController$1.class
 example\web\controllers\BeansController.class

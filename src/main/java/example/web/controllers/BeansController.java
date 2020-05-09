@@ -34,8 +34,6 @@ public class BeansController {
 
     @Autowired
     private ServletContext servletContext;
-    @Autowired
-    private MessageDao messageDao;
 
     ///beans/beansPresenter?search=Processor
     @RequestMapping("/beansPresenter")

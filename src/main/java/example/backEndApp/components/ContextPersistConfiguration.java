@@ -40,13 +40,4 @@ public class ContextPersistConfiguration {
         HibernateTransactionManager hibernateTransactionManager = new HibernateTransactionManager(sessionFactory);
         return hibernateTransactionManager;
     }
-    @Bean
-    public MessageDao messageDao(){
-        return new MessageDao() {
-            @Override
-            public boolean addMessage(Message message) {
-                return false;
-            }
-        };
-    }
 }

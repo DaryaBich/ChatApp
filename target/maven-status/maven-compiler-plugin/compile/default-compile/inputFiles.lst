@@ -11,7 +11,9 @@ C:\Users\Darya\Desktop\Java\WebTemplate\src\main\java\example\web\controllers\Ro
 C:\Users\Darya\Desktop\Java\WebTemplate\src\main\java\example\backEndApp\dao\UserDao.java
 C:\Users\Darya\Desktop\Java\WebTemplate\src\main\java\example\backEndApp\entities\MessageProcessing.java
 C:\Users\Darya\Desktop\Java\WebTemplate\src\main\java\example\web\configurations\DispatcherServletInitializer.java
+C:\Users\Darya\Desktop\Java\WebTemplate\src\main\java\example\backEndApp\entities\Authentication.java
 C:\Users\Darya\Desktop\Java\WebTemplate\src\main\java\example\backEndApp\configurations\RootApplicationConfiguration.java
 C:\Users\Darya\Desktop\Java\WebTemplate\src\main\java\example\backEndApp\dao\MessageDao.java
+C:\Users\Darya\Desktop\Java\WebTemplate\src\main\java\example\web\controllers\AuthenticationController.java
 C:\Users\Darya\Desktop\Java\WebTemplate\src\main\java\example\backEndApp\entities\Chat.java
 C:\Users\Darya\Desktop\Java\WebTemplate\src\main\java\example\web\configurations\WebApplicationContextConfig.java

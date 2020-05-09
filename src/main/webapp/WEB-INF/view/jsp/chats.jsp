@@ -8,16 +8,14 @@
     <title>MyChats</title>
   </head>
   <body>
-  <div class="row">
-    <div class="col-xs-6 col-md-4">
-    Level 1: .col-xs-6 .col-md-4
-    <div class="row">
-         <div class="col-xs-8 col-sm-6">
-           Level 2: .col-xs-8 .col-sm-6
-         </div>
-    </div>
-    </div>
-    <div class="col-xs-12 col-md-8">.col-xs-12 .col-md-8</div>
+  <div class="container">
+    <h2>Chats</h1>
+  <ul class="list-group">
+   <c:forEach var="chat" items="${chats}">
+      <li class="list-group-item">${chat}</li>
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">choose</button>
+   </c:forEach>
+  </ul>
   </div>
   </body>
 </html>
