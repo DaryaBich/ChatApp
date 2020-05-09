@@ -6,5 +6,5 @@ public interface UserDao {
     // добавление пользователя
     boolean addUser(User user);
     // аутентификация пользователя
-    boolean checkUser(String login, String password);
+    User checkUser(String login, String password);
 }

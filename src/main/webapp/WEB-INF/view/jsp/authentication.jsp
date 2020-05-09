@@ -23,7 +23,7 @@ form {
 input[type=text], input[type=password] {
      width: 300px;
      height:60px;
-     font-size: 18px;
+     font-size: 30px;
      margin-bottom: 25px;
      border-radius: 10px;
      padding-left: 80px;
@@ -40,6 +40,8 @@ button {
       margin-top: 60px;
       cursor: pointer;
       border-radius: 10px;
+      font-size: 20px;
+      font-family: cursive;
 }
 </style>
 </head>
