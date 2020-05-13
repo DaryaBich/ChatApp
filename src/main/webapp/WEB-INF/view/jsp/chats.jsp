@@ -7,17 +7,21 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
 body {
-    background: #ace5e2;
+    background: linear-gradient(to top right, powderblue, #ffebeb);
     font-family: cursive;
     font-weight: 1000;
       font-size: 23px;
    }
-   label{
-   color:#8f0101;}
-form {
-    width:400px;
-     height: 500px;
+label{
+   color:#8f0101;
+   font-size: 60px;
 }
+
+form {
+   width:400px;
+   height: 500px;
+}
+
 button {
     background-color: #154c9e;
       border: none;
@@ -33,9 +37,8 @@ button {
 
 table {
     width: 600px;
-    color=white;
     border-collapse: collapse;
-    background-color: white;
+    background: white;
 }
 
 tr, th, td {
@@ -43,11 +46,12 @@ tr, th, td {
     padding: 5px 5px;
     border-style: groove;
     border-width: 3px;
+    border-color:#b01919;
 }
 
 caption {
     padding: 14px 0;
-    font-size: 50px;
+    font-size: 30px;
     text-align: left;
 }
 
@@ -59,10 +63,11 @@ caption {
 <body>
 <form action="/chatapp/check" method="POST">
   <div class="container">
+  <label> user: ${userName}</label>
     <table class="table table-bordered" align=center>
-    <caption>My chats</caption>
+    <caption></caption>
      <tr>
-       <th></th>
+       <th>With whom</th>
        <th></th>
      </tr>
      <c:forEach var="chat" items="${chatName}">

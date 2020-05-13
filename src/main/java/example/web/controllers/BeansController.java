@@ -86,7 +86,7 @@ public class BeansController {
                 Connection connection = dataSource.getConnection();
                 Statement statement = connection.createStatement();
                 writer.write("<h1>DataBaseTest</h1>");
-                ResultSet resultSet = statement.executeQuery("select * from message");
+                ResultSet resultSet = statement.executeQuery("select * from user");
                     while (resultSet.next()){
                         int anInt = resultSet.getInt("ID");
                         String name = resultSet.getString("SENDINGDATE");

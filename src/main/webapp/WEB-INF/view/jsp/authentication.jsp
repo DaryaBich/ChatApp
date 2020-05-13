@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
 body {
-    background: #ace5e2;
+    background: radial-gradient(40% 50%, #FAECD5, #CAE4D8);
     font-family: cursive;
     font-weight: 1000;
       font-size: 30px;
