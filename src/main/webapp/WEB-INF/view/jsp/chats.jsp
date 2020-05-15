@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
 body {
-    background: linear-gradient(to top right, powderblue, #ffebeb);
+    background: linear-gradient(90deg, #c6e4ee 15%, #fed1ae 50%, #faa0b9 60%, #cb7dcb 80%, #757ecb 100%);
     font-family: cursive;
     font-weight: 1000;
       font-size: 23px;
@@ -20,6 +20,7 @@ label{
 form {
    width:400px;
    height: 500px;
+   text-align: center;
 }
 
 button {
@@ -36,14 +37,14 @@ button {
 }
 
 table {
-    width: 600px;
+    width: 800px;
     border-collapse: collapse;
     background: white;
 }
 
 tr, th, td {
     border: 2px solid grey;
-    padding: 5px 5px;
+    padding: 10px 50px;
     border-style: groove;
     border-width: 3px;
     border-color:#b01919;
@@ -54,26 +55,27 @@ caption {
     font-size: 30px;
     text-align: left;
 }
-
-.center {
-    text-align: center;
-}
 </style>
 </head>
 <body>
-<form action="/chatapp/check" method="POST">
+<form action="/chatapp/chat" method="POST">
   <div class="container">
-  <label> user: ${userName}</label>
-    <table class="table table-bordered" align=center>
+  <label> user: ${user.getName()}</label>
+    <table class="table table-bordered">
     <caption></caption>
      <tr>
        <th>With whom</th>
        <th></th>
      </tr>
-     <c:forEach var="chat" items="${chatName}">
+     <c:forEach var="chat" items="${chats}">
            <tr class = "center">
-           <td>${chat}</td>
-           <td><button class="btn btn-outline-success my-2 my-sm-0" type="submit">choose</button></td>
+           <td>${chat.getName()}</td>
+           <td>
+           <button
+           class="btn btn-outline-success my-2 my-sm-0" type="submit" name="click" value=${chat.getId()}>
+           choose
+           </button>
+           </td>
            </tr>
         </c:forEach>
     </table>

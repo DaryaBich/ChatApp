@@ -23,10 +23,4 @@ public class CustomServlet extends HttpServlet implements Servlet {
             }
         });
     }
-
-    @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        String login = req.getParameter("login");
-        String password = req.getParameter("password");
-    }
 }

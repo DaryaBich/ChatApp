@@ -15,6 +15,7 @@ example\backEndApp\dao\ChatDao.class
 example\backEndApp\entities\User.class
 example\web\controllers\AuthenticationController.class
 example\web\controllers\ChatsController.class
+example\web\controllers\ChatController.class
 example\backEndApp\dao\UserInChatDao.class
 example\web\controllers\BeansController$1.class
 example\web\controllers\RootController.class
