@@ -409,3 +409,14 @@
 0:0:0:0:0:0:0:1 - - [25/May/2020:22:01:05 +0300] "POST /chatapp/chat HTTP/1.1" 200 3813 http-bio-8080-exec-2 67
 0:0:0:0:0:0:0:1 - - [25/May/2020:22:01:18 +0300] "POST /chatapp/chat HTTP/1.1" 200 3829 http-bio-8080-exec-2 65
 0:0:0:0:0:0:0:1 - - [25/May/2020:22:01:33 +0300] "POST /chatapp/chat HTTP/1.1" 200 3844 http-bio-8080-exec-2 66
+127.0.0.1 - - [25/May/2020:22:02:39 +0300] "POST /chatapp/check HTTP/1.1" 302 - http-bio-8080-exec-2 386
+127.0.0.1 - - [25/May/2020:22:02:39 +0300] "GET /chatapp/openchats HTTP/1.1" 200 4159 http-bio-8080-exec-3 310
+127.0.0.1 - - [25/May/2020:22:02:40 +0300] "POST /chatapp/chat HTTP/1.1" 200 4130 http-bio-8080-exec-4 22
+127.0.0.1 - - [25/May/2020:22:02:57 +0300] "POST /chatapp/chat HTTP/1.1" 200 4130 http-bio-8080-exec-5 766
+127.0.0.1 - - [25/May/2020:22:03:30 +0300] "POST /chatapp/chat HTTP/1.1" 200 4130 http-bio-8080-exec-7 254
+127.0.0.1 - - [25/May/2020:22:03:35 +0300] "POST /chatapp/chat HTTP/1.1" 200 4130 http-bio-8080-exec-9 149
+127.0.0.1 - - [25/May/2020:22:03:51 +0300] "GET /chatapp/openchats?userId=1 HTTP/1.1" 200 4159 http-bio-8080-exec-10 9
+127.0.0.1 - - [25/May/2020:22:03:53 +0300] "POST /chatapp/chat HTTP/1.1" 200 4130 http-bio-8080-exec-10 10
+0:0:0:0:0:0:0:1 - - [25/May/2020:22:05:35 +0300] "POST /chatapp/check HTTP/1.1" 302 - http-bio-8080-exec-1 585
+0:0:0:0:0:0:0:1 - - [25/May/2020:22:05:35 +0300] "GET /chatapp/openchats HTTP/1.1" 200 4159 http-bio-8080-exec-3 168
+0:0:0:0:0:0:0:1 - - [25/May/2020:22:05:36 +0300] "POST /chatapp/chat HTTP/1.1" 200 4130 http-bio-8080-exec-4 30

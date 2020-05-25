@@ -29,34 +29,31 @@ public class ChatController {
     @RequestMapping(value = "/chat", method = RequestMethod.POST)
     public ModelAndView openChat(@RequestParam(value = "click", defaultValue = "", required = false) String chatId,
                                  ModelAndView modelAndView, HttpServletRequest request) throws SQLException {
-        HttpSession session = request.getSession();
-        long userId = (long) session.getAttribute("userId");
+        User user = null;
+        List messages = new ArrayList<>();
+        String userWith = null;
+        long userId = (long) request.getSession().getAttribute("userId");
         Map model = modelAndView.getModel();
         Connection connection = dataSource.getConnection();
         Statement statement = connection.createStatement();
         ResultSet searchedUsers = statement.executeQuery("select * from users where id=" + userId);
-        User user = null;
         if (searchedUsers.next()) {
             user = new User(searchedUsers.getInt("ID"), searchedUsers.getString("name"),
                     searchedUsers.getString("login"),
                     searchedUsers.getString("password").toCharArray());
         }
-        statement.close();
-        statement = connection.createStatement();
-        String messageQuery = "select * from message where id in (select idMessage from messageProcessing where idChat = " + chatId + ")";
+        String messageQuery = "select * from message where id in "+
+                "(select idMessage from messageProcessing where idChat = " + chatId + ")";
         ResultSet searchedMessages = statement.executeQuery(messageQuery);
-        List messages = new ArrayList<>();
         while (searchedMessages.next()) {
             messages.add(new Message(searchedMessages.getInt("ID"),
                     searchedMessages.getInt("sentByUserWithId"),
                     searchedMessages.getString("text"),
                     searchedMessages.getTimestamp("sendingDate")));
         }
-        statement.close();
-        statement = connection.createStatement();
-        String selectUserWithWhomDialog = "select * from users where id in (select userId from userInChat where chatId = " + chatId+")";
+        String selectUserWithWhomDialog = "select * from users where id in "+
+                "(select userId from userInChat where chatId = " + chatId+")";
         ResultSet searchedUser = statement.executeQuery(selectUserWithWhomDialog);
-        String userWith = null;
         while (searchedUser.next()) {
             if (searchedUser.getLong("id") != userId) {
                 userWith = searchedUser.getString("name");
