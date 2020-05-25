@@ -18,6 +18,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 
@@ -30,7 +31,6 @@ public class ChatsController {
     @RequestMapping(value = "/openchats", method = RequestMethod.GET)
     public ModelAndView openChats(ModelAndView modelAndView, HttpServletRequest request)
             throws SQLException {
-        System.out.println(request.getSession().getAttribute("userId"));
         User user = null;
         long userId = (long) request.getSession().getAttribute("userId");
         Connection connection = dataSource.getConnection();

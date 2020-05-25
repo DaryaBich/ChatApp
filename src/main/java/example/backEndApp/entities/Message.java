@@ -1,14 +1,15 @@
 package example.backEndApp.entities;
 
+import java.sql.Timestamp;
 import java.util.Date;
 
 public class Message {
     long id;
     long sentByUserWithId;
     String text;
-    Date sendingDate;
+    Timestamp sendingDate;
 
-    public Message(long id, long sentByUserWithId, String text, Date sendingDate) {
+    public Message(long id, long sentByUserWithId, String text, Timestamp sendingDate) {
         this.id = id;
         this.sentByUserWithId = sentByUserWithId;
         this.text = text;
@@ -39,11 +40,11 @@ public class Message {
         this.text = text;
     }
 
-    public Date getSendingDate() {
+    public Timestamp getSendingDate() {
         return sendingDate;
     }
 
-    public void setSendingDate(Date sendingDate) {
+    public void setSendingDate(Timestamp sendingDate) {
         this.sendingDate = sendingDate;
     }
 }

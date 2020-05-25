@@ -1,7 +1,10 @@
 package example.web.controllers;
 
+import example.backEndApp.entities.Chat;
+import example.backEndApp.entities.Message;
 import example.backEndApp.entities.User;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.userdetails.UserDetailsByNameServiceWrapper;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -15,7 +18,7 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.util.Map;
+import java.util.*;
 
 @Controller
 @RequestMapping(value = "/chatapp")
@@ -39,8 +42,35 @@ public class ChatController {
                     searchedUsers.getString("password").toCharArray());
         }
         statement.close();
+        statement = connection.createStatement();
+        String messageQuery = "select * from message where id in (select idMessage from messageProcessing where idChat = " + chatId + ")";
+        ResultSet searchedMessages = statement.executeQuery(messageQuery);
+        List messages = new ArrayList<>();
+        while (searchedMessages.next()) {
+            messages.add(new Message(searchedMessages.getInt("ID"),
+                    searchedMessages.getInt("sentByUserWithId"),
+                    searchedMessages.getString("text"),
+                    searchedMessages.getTimestamp("sendingDate")));
+        }
+        statement.close();
+        statement = connection.createStatement();
+        String selectUserWithWhomDialog = "select * from users where id in (select userId from userInChat where chatId = " + chatId+")";
+        ResultSet searchedUser = statement.executeQuery(selectUserWithWhomDialog);
+        String userWith = null;
+        while (searchedUser.next()) {
+            if (searchedUser.getLong("id") != userId) {
+                userWith = searchedUser.getString("name");
+            }
+        }
+        statement.close();
+        Comparator<Message> comparator = Comparator.comparing(message -> message.getSendingDate());
+        Collections.sort(messages, comparator);
+        Collections.reverse(messages);
         model.put("user", user);
+        model.put("userId", userId);
         model.put("chatId", Integer.valueOf(chatId));
+        model.put("messages", messages);
+        model.put("userWith", userWith);
         modelAndView.setViewName("/jsp/chat");
         return modelAndView;
     }
