@@ -47,7 +47,7 @@ public class SendMessageController {
             messageProcessingId = 1;
         }
         statement.executeUpdate("INSERT INTO MESSAGE VALUES(" + messageId + ", " + userId + ", '" + text +
-                "', GETDATE())");
+                "', NOW())");
         statement.executeUpdate("INSERT INTO MESSAGEPROCESSING VALUES(" + messageProcessingId + ", " +
                 chatId + ", " + messageId + ")");
         statement.close();
