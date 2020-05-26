@@ -1,7 +1,6 @@
 package example.backEndApp.entities;
 
 import java.sql.Timestamp;
-import java.util.Date;
 
 public class Message {
     long id;

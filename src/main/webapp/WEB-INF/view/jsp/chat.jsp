@@ -13,13 +13,16 @@ body {
     font-size: 30px;
    }
    label{
-   color:#8f0101;}
+   color:#8f0101;
+}
+
 form {
     width:1200px;
      margin: 10px auto 0 auto;
      text-align: center;
      background: #ffffffd6;
 }
+
 button {
       border: none;
       padding: 10px;
@@ -27,27 +30,29 @@ button {
       border-radius: 3px;
       box-shadow: 1px 5px 30px -5px rgba(0, 0, 0, 0.6);
       color: #fff;
-      margin-top: 60px;
+      margin-top: 30px;
       cursor: pointer;
       border-radius: 15px;
       font-size: 20px;
       font-family: cursive;
+      margin: 10px;
 }
+
 .send{
-padding: 20px;
-margin: 30px;
+padding: 15px;
 background-color: #d32f2fc2;
 }
+
 .back{
 width: 400px;
-margin: 30px;
 float: left;
 background-color: #154c9eaf;
 }
+
 textarea{
      width: 800px;
-     height:150px;
-     font-size: 30px;
+     height:100px;
+     font-size: 20px;
      margin-bottom: 25px;
      border-radius: 10px;
      padding-left: 150px;
@@ -56,19 +61,20 @@ textarea{
      padding: 20px;
      resize: none;
 }
+
 .container {
     width:800px;
-    height: 70px;
     border: 2px solid #dedede;
     background-color: #f2dff0;
-    border-radius: 50px;
-    padding: 10px;
-    margin: 30px 0;
+    border-radius: 30px;
+    padding: 4px;
+    margin: 10px 0;
     border-color: #ab030f;
     float: right;
 }
+
 .darker {
-float: left;
+    float: left;
     background-color: #fff7cf;
 }
 
@@ -86,26 +92,29 @@ float: left;
     float: left;
     color: #8f0101ce;
 }
+
 .text {
     color: black;
 }
+
 .timeR{
+font-size: 25px;
     color: #961e8ae0;
 }
+
 .timeL{
+    font-size: 25px;
     color: #d4850f;
 }
-
 </style>
 </head>
 <body>
 <form action="/chatapp/openchats" method="GET">
     <button class="back" type="submit"name="userId" value=${user.getId()}>Back</button>
     </form>
-<form>
-<textarea name="messageText"></textarea>
+<form action="/chatapp/sendmessage" method="POST">
+    <textarea name="messageText"></textarea>
     <button class="send" type="submit">Send</button>
-
  </form>
 <form>
     <c:forEach var="message" items="${messages}">
@@ -119,7 +128,7 @@ float: left;
         </c:when>
         <c:otherwise>
             <div class="container darker">
-                <label class="time-left">${userWith}</label>
+                <label class="time-left">${userInterlocutor.getName()}</label>
                 <p class="text">${message.getText()}</p>
                 <span class="time-left timeL">${message.getSendingDate()}</span>
             </div>

@@ -22,3 +22,4 @@ example\web\controllers\RootController.class
 example\backEndApp\dao\MessageDao.class
 example\backEndApp\entities\MessageProcessing.class
 example\backEndApp\configurations\RootApplicationConfiguration.class
+example\web\controllers\SendMessageController.class
