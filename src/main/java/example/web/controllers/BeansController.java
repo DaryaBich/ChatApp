@@ -1,6 +1,4 @@
 package example.web.controllers;
-
-import example.backEndApp.dao.MessageDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.stereotype.Controller;

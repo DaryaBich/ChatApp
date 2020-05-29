@@ -109,10 +109,10 @@ font-size: 25px;
 </style>
 </head>
 <body>
-<form action="/chatapp/openchats" method="GET">
+<form action="/user/chatapp/openchats" method="GET">
     <button class="back" type="submit"name="userId" value=${user.getId()}>Back</button>
     </form>
-<form action="/chatapp/sendmessage" method="POST">
+<form action="/user/chatapp/sendmessage" method="POST">
     <textarea name="messageText"></textarea>
     <button class="send" type="submit">Send</button>
  </form>

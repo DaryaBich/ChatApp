@@ -18,8 +18,7 @@ label{
 }
 
 form {
-   width:400px;
-   height: 500px;
+   width:800px;
    text-align: center;
 }
 
@@ -55,12 +54,22 @@ caption {
     font-size: 30px;
     text-align: left;
 }
+.backBtn{
+    float: left;
+    background-color: #d32f2f;
+    width: 250px;
+    height: 60px;
+}
 </style>
 </head>
 <body>
-<form action="/chatapp/chat" method="POST">
+<form action="/chatapp/authentication" method=POST>
+    <label> user: ${user.getName()}</label>
+    <button class = "backBtn" type="submit"> Log out</button>
+</form>
+<form action="/user/chatapp/chat" method="POST">
   <div class="container">
-  <label> user: ${user.getName()}</label>
+
     <table class="table table-bordered">
     <caption></caption>
      <tr>
@@ -72,7 +81,7 @@ caption {
            <td>${chat.getName()}</td>
            <td>
            <button
-           class="btn btn-outline-success my-2 my-sm-0" type="submit" name="click" value=${chat.getId()}>
+            type="submit" name="click" value=${chat.getId()}>
            choose
            </button>
            </td>

@@ -9,24 +9,20 @@ body {
     background: linear-gradient(#c6e4ee 0%, #c6e4ee 40%, #fed1ae 60%, #faa0b9 70%, #cb7dcb 80%, #757ecb 100%);
     font-family: cursive;
     font-weight: 1000;
-      font-size: 30px;
+      font-size: 60px;
+      width:1500px;
+      height: 550px;
    }
-   label{
-   color:#8f0101;}
+label{
+   color:#8f0101;
+}
 form {
-    width:400px;
-     height: 600px;
+    width:600px;
+     height: 400px;
      margin: 200px auto 0 auto;
      text-align: center;
-}
-input[type=text], input[type=password] {
-     width: 300px;
-     height:60px;
-     font-size: 30px;
-     margin-bottom: 25px;
-     border-radius: 10px;
-     padding-left: 80px;
-     border-color: red;
+     background:#fcfafaab;
+     float: center;
 }
 button {
     background-color: #d32f2f;
@@ -41,18 +37,14 @@ button {
       border-radius: 10px;
       font-size: 20px;
       font-family: cursive;
+      margin: 80px 0 0 0;
 }
 </style>
 </head>
 <body>
-   <form action="/chatapp/check" method="POST">
-     <label>Login
-       <input type="text" name="login"><br/>
-     </label>
-     <label>Password
-       <input type="password" name="password"><br/>
-     </label>
-     <button type="submit" class="btn btn-default btn-lg">Sign in</button>
+   <form action="/chatapp/authentication" method="POST">
+     <label>Welcome to the chat application!</label>
+     <button type="submit" class="btn btn-default btn-lg">Log in to account</button>
    </form>
  </body>
 </html>

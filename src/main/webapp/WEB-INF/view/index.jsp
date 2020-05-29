@@ -1,3 +1,3 @@
 <%
-out.println("<div>Hello!</div>"
+out.println("<div>Hello!</div>")
 <%
