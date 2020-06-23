@@ -27,8 +27,9 @@ public class UserDaoImpl implements UserDao {
             return user;
         }
     };
+
     @Override
-    public boolean addUser(String name, String login, String password){
+    public boolean addUser(String name, String login, String password) {
         return jdbcTemplate.update("insert into users(name, login, password) values(?, ?, ?)", name, login, password)
                 == 1;
     }

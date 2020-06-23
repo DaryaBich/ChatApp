@@ -11,6 +11,7 @@ import javax.sql.DataSource;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.List;
+
 @Repository
 public class MessageDaoImpl implements MessageDao {
     @Autowired
@@ -26,6 +27,7 @@ public class MessageDaoImpl implements MessageDao {
             return message;
         }
     };
+
     @Override
     public List<Message> searchMessageByChatId(String chatId) {
         List<Message> messages = jdbcTemplate.query("select * from message where id in (select idMessage from " +
