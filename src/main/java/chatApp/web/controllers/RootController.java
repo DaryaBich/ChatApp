@@ -37,7 +37,7 @@ public class RootController {
     public ModelAndView indexPage(ModelAndView modelAndView) {
                return modelAndView;
     }
-    @RequestMapping(value = "/chatApp") String appCheck(HttpServletRequest request){
+    @RequestMapping(value = "/chatapp") String appCheck(HttpServletRequest request){
         HttpSession session = request.getSession();
         Object userId = session.getAttribute("userId");
         return userId == null ? "redirect:chatapp/welcomepage":"redirect:chatapp/openchats";

@@ -16,7 +16,7 @@ import java.sql.*;
 import java.util.List;
 
 @Controller
-@RequestMapping(value = "/chatApp")
+@RequestMapping(value = "/chatapp")
 public class AuthenticationController {
     @Autowired
     private UserDao userDao;

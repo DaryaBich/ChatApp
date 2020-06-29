@@ -8,7 +8,7 @@ import org.springframework.web.servlet.ModelAndView;
 import javax.servlet.http.HttpServletResponse;
 
 @Controller
-@RequestMapping(value = "/chatApp")
+@RequestMapping(value = "/chatapp")
 public class WelcomePageController {
     @RequestMapping(value = "/welcomepage")
     public ModelAndView openWelcomePage(ModelAndView modelAndView){

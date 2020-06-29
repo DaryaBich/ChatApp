@@ -1,5 +1,4 @@
 package chatApp.backEndApp.components;
-import org.hibernate.SessionFactory;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
@@ -7,7 +6,6 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.datasource.embedded.EmbeddedDatabase;
 import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseBuilder;
 import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseType;
-import org.springframework.orm.hibernate5.HibernateTransactionManager;
 import org.springframework.orm.hibernate5.LocalSessionFactoryBean;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 import javax.sql.DataSource;
@@ -36,10 +34,5 @@ public class ContextPersistConfiguration {
         localSessionFactoryBean.setPackagesToScan("example.backEndApp.entities");
         System.out.println("sessionFactory datasource " + dataSource);
         return localSessionFactoryBean;
-    }
-    @Bean
-    public HibernateTransactionManager transactionManager(SessionFactory sessionFactory){
-        HibernateTransactionManager hibernateTransactionManager = new HibernateTransactionManager(sessionFactory);
-        return hibernateTransactionManager;
     }
 }

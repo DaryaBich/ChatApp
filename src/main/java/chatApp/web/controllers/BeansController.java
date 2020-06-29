@@ -32,7 +32,6 @@ public class BeansController {
     @Autowired
     private ServletContext servletContext;
 
-    ///beans/beansPresenter?search=Processor
     @RequestMapping("/beansPresenter")
     public ModelAndView beansPresenter(@RequestParam(value = "search",defaultValue = "",required = false)String search,
                                        ModelAndView modelAndView) {
@@ -70,7 +69,6 @@ public class BeansController {
 
                 PrintWriter writer =
                         httpServletResponse.getWriter();
-//                writer.write("MessageDao" + messageDao.addMessage(null));
                 writer.write("<h1>webApplicationContextBeans</h1>\n");
                 for (String webApplicationContextBean : webApplicationContextBeans) {
                     writer.write(webApplicationContextBean+"<br>");
@@ -79,10 +77,6 @@ public class BeansController {
                 for (String rootContextBean : rootContextBeans) {
                     writer.write(rootContextBean+"<br>");
                 }
-                //test DATA BASE
-                Connection connection = dataSource.getConnection();
-                Statement statement = connection.createStatement();
-                writer.write("<h1>DataBaseTest</h1>");
             }
         });
     }

@@ -14,7 +14,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.sql.SQLException;
 
 @Controller
-@RequestMapping(value = "/chatApp")
+@RequestMapping(value = "/chatapp")
 public class AuthorizationController {
     @Autowired
     private UserDao userDao;
